@@ -1,53 +1,68 @@
-var playMode = ["Rock", "Scissors", "Paper"];
-const computerSelection = computerPlay();
-let playerSelection;
+
 var scoreCount = 0;
+
 
 function computerPlay() {
     // Returns at random either of
     // Rock, Scissors or Paper
-    return playMode[Math.floor(Math.random() * playMode.length)];
+    const playModeTypes = ["Rock", "Scissors", "Paper"];
+
+    const playMode = Math.floor(Math.random() * playModeTypes.length);
+    return (playMode, playModeTypes[playMode]);
 }
 
 function playRound(playerSelection, computerSelection) {
     // Single Round game, returns string that decleares
     // if the player won or lose.
+    
+    /*
     playerSelection = prompt("Your Move: 'Rock', 'Paper' or 'Scissors'");
 
     if (computerSelection === 'Rock' && playerSelection === 'Paper' ) {
-        return "You Won!";
+        console.log("You Won!");
+    } else {
+        console.log("You Lost!");
     }
+    */
+    playerSelection = prompt("Your Move: 'Rock', 'Paper' or 'Scissors' ");
+    computerSelection = computerPlay();
+    
 
- /*       
-    if (computerSelection === 'rock') {
+    if (computerSelection === 'Rock' && playerSelection === 'Paper' ) {
+        console.log("You Won! Paper beats Rock");
+    }
+    
+
+    
+    /*
+    if (computerSelection === 'Rock') {
         switch (playerSelection) {
-            case "rock": return "That was a tie! Rock and Rock are friends ";
-            case "paper": return "You Win! Paper beats Rock";
-            case "scissors": return "You Lose! Rock blunts Scissors";
+            case "Rock": console.log("That was a tie! Rock and Rock are friends ");
+            case "Paper": console.log("You Win! Paper beats Rock");
+            case "Scissors": console.log("You Lose! Rock blunts Scissors");
             default: break;
         } 
     }
 
-    if (computerSelection === 'paper' ) {
+    if (computerSelection === 'Paper' ) {
         switch (playerSelection) {
-            case "rock": return "You Lose! Paper beats Rock";
-            case "paper": return "That was a tie! :( Paper cant win over paper'";
-            case "scissors": return "You Win! Scissors rips apart Paper";
+            case "Rock": console.log( "You Lose! Paper beats Rock");
+            case "paper": console.log( "That was a tie! :( Paper cant win over paper'");
+            case "Scissors": console.log( "You Win! Scissors rips apart Paper");
             default: break;
         } 
         
     }
     
-    if (computerSelection === 'scissors') {
+    if (computerSelection === 'Scissors') {
         switch (playerSelection) {
-            case "rock": return "You Win! Rock blunts Scissors"
-            case "paper": return "You Lose! :( Scissors beats paper";
-            case "scissors": return "That was a tie! Scissors can't beat scissors";
+            case "rock": console.log("You Win! Rock blunts Scissors");
+            case "paper": console.log( "You Lose! :( Scissors beats paper");
+            case "scissors": console.log( "That was a tie! Scissors can't beat scissors");
             default: break;
         } 
     }
     */
-
 }
 
 function game() {
